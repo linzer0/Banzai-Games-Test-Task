@@ -1,0 +1,12 @@
+﻿# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/modules.xml
+/.idea.Banzai Games Test Task.iml
+/projectSettingsUpdater.xml
+/contentModel.xml
+# Datasource local storage ignored files
+/../../../../../../../:\Projects\Unity\Banzai Games Test Task\.idea\.idea.Banzai Games Test Task\.idea/dataSources/
+/dataSources.local.xml
+/Temp
