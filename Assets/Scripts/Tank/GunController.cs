@@ -5,7 +5,6 @@ namespace Tank
 {
     public class GunController : MonoBehaviour
     {
-
         [Header("Bullet Data")] 
         public GameObject Bullet;
         public float BulletSpeed;
