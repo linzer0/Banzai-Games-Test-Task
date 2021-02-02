@@ -107,9 +107,11 @@ GameObject:
   - component: {fileID: 3153911422879427532}
   - component: {fileID: 3153911422879427535}
   - component: {fileID: 8004820828684338021}
+  - component: {fileID: -3687921781035762310}
+  - component: {fileID: 4266665537375574536}
   m_Layer: 0
   m_Name: Tank
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,15 +123,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3153911422879427530}
-  m_LocalRotation: {x: 0, y: -0.5366223, z: 0, w: 0.84382254}
-  m_LocalPosition: {x: 0, y: 0.423, z: 0.86}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3153911423806988656}
   - {fileID: 3153911423399526862}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -64.908, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3153911422879427532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,8 +171,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03eff9032b65407ca532770eaecce6a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WeaponList: []
+  WeaponList:
+  - {fileID: 7813224727924445158, guid: d7fa48904e2861e48bafa771184ede86, type: 3}
+  - {fileID: 9149294759097644630, guid: f121efd5633bc154f8076eb353c48112, type: 3}
   GunPosition: {fileID: 3153911423305012193}
+--- !u!114 &-3687921781035762310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3153911422879427530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6821f2ccd8b19c24682867acbbe25eb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TriggerTag: Monster
+  DestroyTriggerObject: 0
+--- !u!65 &4266665537375574536
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3153911422879427530}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.1332352, z: 2.2114568}
+  m_Center: {x: 0, y: 0.27345788, z: 0.0074341297}
 --- !u!1 &3153911423305011742
 GameObject:
   m_ObjectHideFlags: 0
