@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1033950090}
   - component: {fileID: 1033950089}
   - component: {fileID: 1033950088}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 1210825543}
   - component: {fileID: 1210825542}
   - component: {fileID: 1210825541}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -225,15 +225,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5669689624263180985, guid: 7c73501bf22114e43abaaf2f15d09b98, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.57
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5669689624263180985, guid: 7c73501bf22114e43abaaf2f15d09b98, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.99
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5669689624263180985, guid: 7c73501bf22114e43abaaf2f15d09b98, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.57
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5669689624263180985, guid: 7c73501bf22114e43abaaf2f15d09b98, type: 3}
       propertyPath: m_LocalRotation.w

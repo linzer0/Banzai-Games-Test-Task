@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6464264455058254871}
   - component: {fileID: -5665943946564255719}
   - component: {fileID: -445337968740696592}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Monster Base
   m_TagString: Monster
   m_Icon: {fileID: 0}
@@ -130,7 +130,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5669689624657707264}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
