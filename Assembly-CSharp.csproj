@@ -50,13 +50,14 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Tank\WeaponChanger.cs" />
+     <Compile Include="Assets\Scripts\Components\AttackComponent.cs" />
      <Compile Include="Assets\Scripts\Tank\TankController.cs" />
      <Compile Include="Assets\Scripts\Components\DataComponent.cs" />
-     <Compile Include="Assets\Scripts\DataConfig.cs" />
      <Compile Include="Assets\Scripts\Tank\GunController.cs" />
-     <Compile Include="Assets\Scripts\Components\AttackComponent.cs" />
-     <Compile Include="Assets\Scripts\Tank\WeaponChanger.cs" />
-     <Compile Include="Assets\HealthController.cs" />
+     <Compile Include="Assets\Scripts\HealthController.cs" />
+     <Compile Include="Assets\Scripts\Monster\MonsterCreator.cs" />
+     <Compile Include="Assets\Scripts\Monster\MonsterController.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>D:/Projects/Unity/Banzai Games Test Task/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
