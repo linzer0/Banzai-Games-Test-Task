@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Security.Cryptography;
 using UnityEngine;
 
 namespace Tank
@@ -8,18 +7,17 @@ namespace Tank
     {
         [SerializeField] private List<GameObject> WeaponList;
         [SerializeField] private Transform GunPosition;
-        
+
         private int CurrentWeaponIndex;
         private GameObject CurrentWeaponObject;
 
         void Start()
         {
-            SetWeapon(0);
+            SetWeapon(WeaponList[CurrentWeaponIndex]);
         }
 
         void Update()
         {
-
             if (Input.GetKeyDown(KeyCode.Q))
             {
                 SetPreviousWeapon();
@@ -49,25 +47,15 @@ namespace Tank
             }
         }
 
-        void SetWeapon(int index)
-        {
-            if (index >= 0 && index < WeaponList.Count)
-            {
-                CurrentWeaponIndex = index;
-                SetWeapon(WeaponList[CurrentWeaponIndex]);
-            }
-        }
-
         void SetWeapon(GameObject prefab)
         {
             if (CurrentWeaponObject != null)
             {
                 Destroy(CurrentWeaponObject);
             }
-            
+
             CurrentWeaponObject = Instantiate(prefab, Vector3.zero, prefab.transform.rotation);
             CurrentWeaponObject.transform.SetParent(GunPosition, false);
         }
-        
     }
 }

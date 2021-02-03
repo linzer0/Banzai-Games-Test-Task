@@ -11,7 +11,7 @@ namespace Monster
 
         public float XOffset;
         public float ZOffset;
-        
+
         [SerializeField] private List<GameObject> MonsterPrefabs;
         [SerializeField] private GameObject ChaseTarget;
 
@@ -23,12 +23,12 @@ namespace Monster
         void CreateMonster(GameObject prefab, Vector3 spawnPosition)
         {
             var monsterObject = Instantiate(prefab, spawnPosition, Quaternion.identity);
-            
+
             var healthController = monsterObject.GetComponent<HealthController>();
             healthController.OnDeath += OnMonsterDestroy;
             healthController.OnDeath += () => { healthController.OnDeath -= OnMonsterDestroy; };
-            
-            var monsterController = monsterObject.GetComponent<MonsterController>();
+
+            var monsterController = monsterObject.GetComponent<MoveToTarget>();
             monsterController.Target = ChaseTarget;
         }
 
@@ -36,23 +36,23 @@ namespace Monster
         {
             for (int i = 0; i < amount; i++)
             {
-                var monsterPosition = GetSpawnPosition();
+                var monsterPosition = GetPositionOutsideCameraView();
                 var monsterPrefab = MonsterPrefabs[Random.Range(0, MonsterPrefabs.Count)];
-                
+
                 CreateMonster(monsterPrefab, monsterPosition);
             }
         }
 
         private void OnMonsterDestroy()
         {
-           CreateMonsters(); 
+            CreateMonsters();
         }
 
-        private Vector3 GetSpawnPosition()
+        private Vector3 GetPositionOutsideCameraView()
         {
             var position = Vector3.one;
-            position.x = (float) (Math.Pow(-1, Random.Range(1, 3)) * XOffset) + Random.Range(1, 3);
-            position.z = (float) (Math.Pow(-1, Random.Range(1, 3)) * ZOffset)  + Random.Range(1, 4);
+            position.x = (float) (Math.Pow(-1, Random.Range(1, 3)) * XOffset) + Random.Range(1, 4);
+            position.z = (float) (Math.Pow(-1, Random.Range(1, 3)) * ZOffset) + Random.Range(1, 4);
             return position;
         }
     }

@@ -3,9 +3,9 @@ using UnityEngine;
 
 namespace Monster
 {
-    public class MonsterController : MonoBehaviour
+    public class MoveToTarget : MonoBehaviour
     {
-        [HideInInspector] public GameObject Target;
+        public GameObject Target;
 
         private DataComponent DataComponent;
 
