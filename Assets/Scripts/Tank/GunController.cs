@@ -40,7 +40,7 @@ namespace Tank
         private void AddForceToBullet(GameObject bullet)
         {
             var bulletRigidbody = bullet.GetComponent<Rigidbody>();
-            bulletRigidbody.AddForce(LaunchPosition.forward * BulletSpeed, ForceMode.Force);
+            bulletRigidbody?.AddForce(LaunchPosition.forward * BulletSpeed, ForceMode.Force);
         }
 
         private void AddAttackComponent(GameObject bullet)

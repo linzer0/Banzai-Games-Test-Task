@@ -18,9 +18,10 @@ namespace Monster
         {
             if (Target != null)
             {
-                transform.position = Vector3.MoveTowards(transform.position, Target.transform.position,
+                var targetPosition = Target.transform.position;
+                transform.position = Vector3.MoveTowards(transform.position, targetPosition,
                     DataComponent.Speed * Time.deltaTime);
-                transform.LookAt(Target.transform.position);
+                transform.LookAt(targetPosition);
             }
         }
     }
