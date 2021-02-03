@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Little Gun
       objectReference: {fileID: 0}
+    - target: {fileID: 5429014242672903901, guid: 284d2ed9cc9ede549b1c84bbf4003ae7, type: 3}
+      propertyPath: damage
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 5429014242672903902, guid: 284d2ed9cc9ede549b1c84bbf4003ae7, type: 3}
       propertyPath: m_RootOrder
       value: 0

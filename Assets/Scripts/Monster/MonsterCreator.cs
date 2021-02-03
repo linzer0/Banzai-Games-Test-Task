@@ -1,11 +1,16 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Monster
 {
     public class MonsterCreator : MonoBehaviour
     {
         public int MonsterAmount = 10;
+
+        public float XOffset;
+        public float ZOffset;
         
         [SerializeField] private List<GameObject> MonsterPrefabs;
         [SerializeField] private GameObject ChaseTarget;
@@ -21,6 +26,7 @@ namespace Monster
             
             var healthController = monsterObject.GetComponent<HealthController>();
             healthController.OnDeath += OnMonsterDestroy;
+            healthController.OnDeath += () => { healthController.OnDeath -= OnMonsterDestroy; };
             
             var monsterController = monsterObject.GetComponent<MonsterController>();
             monsterController.Target = ChaseTarget;
@@ -45,9 +51,8 @@ namespace Monster
         private Vector3 GetSpawnPosition()
         {
             var position = Vector3.one;
-            position.x += Random.Range(0, 20);
-            position.y += Random.Range(0, 20);
-            position.z += Random.Range(0, 20);
+            position.x = (float) (Math.Pow(-1, Random.Range(1, 3)) * XOffset) + Random.Range(1, 3);
+            position.z = (float) (Math.Pow(-1, Random.Range(1, 3)) * ZOffset)  + Random.Range(1, 4);
             return position;
         }
     }
