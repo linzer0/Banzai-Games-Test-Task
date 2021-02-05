@@ -30,23 +30,18 @@ namespace Tank
         private void CreateBullet()
         {
             var bullet = Instantiate(Bullet, LaunchPosition.position, Quaternion.identity);
+            var bulletComponentHolder = bullet.GetComponent<BulletComponentHolder>();
 
-            AddForceToBullet(bullet);
-            AddAttackComponent(bullet);
+            AddForceToBullet(bulletComponentHolder.Rigidbody);
+
+            bulletComponentHolder.AttackComponent.Damage = AttackComponent.Damage;
 
             Destroy(bullet, BulletLifeTime);
         }
 
-        private void AddForceToBullet(GameObject bullet)
+        private void AddForceToBullet(Rigidbody rigidbody)
         {
-            var bulletRigidbody = bullet.GetComponent<Rigidbody>();
-            bulletRigidbody?.AddForce(LaunchPosition.forward * BulletSpeed, ForceMode.Force);
-        }
-
-        private void AddAttackComponent(GameObject bullet)
-        {
-            var attackComponent = bullet.AddComponent<AttackComponent>();
-            attackComponent.Damage = AttackComponent.Damage;
+            rigidbody.AddForce(LaunchPosition.forward * BulletSpeed, ForceMode.Force);
         }
     }
 }

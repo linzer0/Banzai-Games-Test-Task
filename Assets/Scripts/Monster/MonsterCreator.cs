@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using General;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -24,13 +23,14 @@ namespace Monster
         void CreateMonster(GameObject prefab, Vector3 spawnPosition)
         {
             var monsterObject = Instantiate(prefab, spawnPosition, Quaternion.identity);
+            var monsterComponentHolder = monsterObject.GetComponent<MonsterComponentHolder>();
 
-            var healthController = monsterObject.GetComponent<HealthController>();
+            var healthController = monsterComponentHolder.HealthController;
             healthController.OnDeath += OnMonsterDestroy;
             healthController.OnDeath += () => { healthController.OnDeath -= OnMonsterDestroy; };
 
-            var monsterController = monsterObject.GetComponent<MoveToTarget>();
-            monsterController.Target = ChaseTarget;
+            var moveToTarget = monsterComponentHolder.MoveToTarget;
+            moveToTarget.Target = ChaseTarget;
         }
 
         private void CreateMonsters(int amount = 1)

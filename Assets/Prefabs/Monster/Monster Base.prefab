@@ -9,12 +9,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5669689624263180985}
+  - component: {fileID: 2905933612835259240}
   - component: {fileID: 5669689624263180966}
   - component: {fileID: 5669689624263180967}
   - component: {fileID: 4405697441780599805}
+  - component: {fileID: -445337968740696592}
   - component: {fileID: 6464264455058254871}
   - component: {fileID: -5665943946564255719}
-  - component: {fileID: -445337968740696592}
   m_Layer: 9
   m_Name: Monster Base
   m_TagString: Monster
@@ -37,6 +38,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2905933612835259240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5669689624263180964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c48077dd396b48a383397e6d648d304d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HealthController: {fileID: 4405697441780599805}
+  MoveToTarget: {fileID: -445337968740696592}
 --- !u!114 &5669689624263180966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79,6 +94,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TriggerTag: Bullet
   DestroyTriggerObject: 1
+--- !u!114 &-445337968740696592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5669689624263180964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ccaa05c8357441bb68b665628411a21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Target: {fileID: 0}
 --- !u!65 &6464264455058254871
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -108,19 +136,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &-445337968740696592
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5669689624263180964}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ccaa05c8357441bb68b665628411a21, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Target: {fileID: 0}
 --- !u!1 &5669689624657707265
 GameObject:
   m_ObjectHideFlags: 0

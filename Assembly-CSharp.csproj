@@ -58,6 +58,8 @@
      <Compile Include="Assets\Scripts\Tank\GunController.cs" />
      <Compile Include="Assets\Scripts\Monster\MoveToTarget.cs" />
      <Compile Include="Assets\Scripts\General\HealthController.cs" />
+     <Compile Include="Assets\Scripts\Monster\MonsterComponentHolder.cs" />
+     <Compile Include="Assets\Scripts\Tank\BulletComponentHolder.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>D:/Projects/Unity/Banzai Games Test Task/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
