@@ -1,22 +1,33 @@
-﻿using Components;
+﻿using System.Collections.Generic;
+using Components;
+using General;
 using UnityEngine;
 
 namespace Tank
 {
     public class GunController : MonoBehaviour
     {
-        [Header("Bullet Data")] 
-        public GameObject Bullet;
+        [Header("Bullet Data")] public GameObject Bullet;
         public float BulletSpeed;
         public float BulletLifeTime = 2.0f;
 
-        [Header("Other")] 
-        public Transform LaunchPosition;
+        [Header("Other")] public Transform LaunchPosition;
 
         private AttackComponent AttackComponent;
+        private ObjectPool objectPool;
+
+        public ObjectPool ObjectPool
+        {
+            get => objectPool;
+            set => objectPool = value;
+        }
+
+
         void Start()
         {
             AttackComponent = gameObject.GetComponent<AttackComponent>();
+
+            objectPool.PrefabList = new List<GameObject>() {Bullet};
         }
 
         void Update()
@@ -29,7 +40,11 @@ namespace Tank
 
         private void CreateBullet()
         {
-            var bullet = Instantiate(Bullet, LaunchPosition.position, Quaternion.identity);
+            var bullet = objectPool.GetObjectFromPool();
+
+            bullet.transform.position = LaunchPosition.position;
+            bullet.SetActive(true);
+
             var bulletComponentHolder = bullet.GetComponent<BulletComponentHolder>();
 
             AddForceToBullet(bulletComponentHolder.Rigidbody);

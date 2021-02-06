@@ -350,6 +350,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8ec2140acb97b64686922bdd59b35c2, type: 3}
+--- !u!1 &125796250 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 586066720830188744, guid: a8ec2140acb97b64686922bdd59b35c2, type: 3}
+  m_PrefabInstance: {fileID: 125796249}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &125796251 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 586066720830188748, guid: a8ec2140acb97b64686922bdd59b35c2, type: 3}
@@ -364,6 +369,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 279080277}
+  - component: {fileID: 279080276}
   m_Layer: 0
   m_Name: Bullet Pool
   m_TagString: Untagged
@@ -371,6 +377,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &279080276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 279080275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68b5e56f1768400daaf6f89392e2e56a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Pool:
+  - {fileID: 1571626609}
+  - {fileID: 897458557}
+  - {fileID: 125796250}
+  - {fileID: 484734897}
+  - {fileID: 1411152910}
+  - {fileID: 1209602555}
+  PoolParent: {fileID: 279080277}
+  ObjectCount: 6
 --- !u!4 &279080277
 Transform:
   m_ObjectHideFlags: 0
@@ -523,6 +550,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8ec2140acb97b64686922bdd59b35c2, type: 3}
+--- !u!1 &484734897 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 586066720830188744, guid: a8ec2140acb97b64686922bdd59b35c2, type: 3}
+  m_PrefabInstance: {fileID: 484734896}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &484734898 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 586066720830188748, guid: a8ec2140acb97b64686922bdd59b35c2, type: 3}
@@ -823,6 +855,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8ec2140acb97b64686922bdd59b35c2, type: 3}
+--- !u!1 &897458557 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 586066720830188744, guid: a8ec2140acb97b64686922bdd59b35c2, type: 3}
+  m_PrefabInstance: {fileID: 897458556}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &897458558 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 586066720830188748, guid: a8ec2140acb97b64686922bdd59b35c2, type: 3}
@@ -1138,6 +1175,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8ec2140acb97b64686922bdd59b35c2, type: 3}
+--- !u!1 &1209602555 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 586066720830188744, guid: a8ec2140acb97b64686922bdd59b35c2, type: 3}
+  m_PrefabInstance: {fileID: 1209602554}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1209602556 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 586066720830188748, guid: a8ec2140acb97b64686922bdd59b35c2, type: 3}
@@ -1471,6 +1513,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8ec2140acb97b64686922bdd59b35c2, type: 3}
+--- !u!1 &1411152910 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 586066720830188744, guid: a8ec2140acb97b64686922bdd59b35c2, type: 3}
+  m_PrefabInstance: {fileID: 1411152909}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1411152911 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 586066720830188748, guid: a8ec2140acb97b64686922bdd59b35c2, type: 3}
@@ -1537,6 +1584,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8ec2140acb97b64686922bdd59b35c2, type: 3}
+--- !u!1 &1571626609 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 586066720830188744, guid: a8ec2140acb97b64686922bdd59b35c2, type: 3}
+  m_PrefabInstance: {fileID: 1571626608}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1571626610 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 586066720830188748, guid: a8ec2140acb97b64686922bdd59b35c2, type: 3}
@@ -2099,5 +2151,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8004820828684338021, guid: abfb15faf9450d148b08455d7f64692d, type: 3}
+      propertyPath: BulletPool
+      value: 
+      objectReference: {fileID: 279080276}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abfb15faf9450d148b08455d7f64692d, type: 3}

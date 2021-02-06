@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using General;
 using UnityEngine;
 
 namespace Tank
@@ -8,12 +9,34 @@ namespace Tank
         [SerializeField] private List<GameObject> WeaponList;
         [SerializeField] private Transform GunPosition;
 
+        [SerializeField] private ObjectPool BulletPool;
+
         private int CurrentWeaponIndex;
         private GameObject CurrentWeaponObject;
+        private GunController currentGunController;
+
+        private List<GameObject> ActiveGuns = new List<GameObject>();
 
         void Start()
         {
-            SetWeapon(WeaponList[CurrentWeaponIndex]);
+            CreateAllGuns();
+            SetWeapon(0);
+        }
+
+        private void CreateAllGuns()
+        {
+            foreach (var gunPrefab in WeaponList)
+            {
+                var newGun = Instantiate(gunPrefab, Vector3.zero, gunPrefab.transform.rotation);
+                newGun.transform.SetParent(GunPosition, false);
+
+                var gunController = newGun.GetComponent<GunController>();
+                gunController.ObjectPool = BulletPool;
+
+                newGun.SetActive(false);
+
+                ActiveGuns.Add(newGun);
+            }
         }
 
         void Update()
@@ -33,8 +56,9 @@ namespace Tank
         {
             if (CurrentWeaponIndex - 1 >= 0)
             {
+                UnSetWeapon(CurrentWeaponIndex);
                 CurrentWeaponIndex--;
-                SetWeapon(WeaponList[CurrentWeaponIndex]);
+                SetWeapon(CurrentWeaponIndex);
             }
         }
 
@@ -42,20 +66,26 @@ namespace Tank
         {
             if (CurrentWeaponIndex + 1 < WeaponList.Count)
             {
+                UnSetWeapon(CurrentWeaponIndex);
                 CurrentWeaponIndex++;
-                SetWeapon(WeaponList[CurrentWeaponIndex]);
+                SetWeapon(CurrentWeaponIndex);
             }
         }
 
-        void SetWeapon(GameObject prefab)
+        void UnSetWeapon(int index)
         {
-            if (CurrentWeaponObject != null)
+            if (index >= 0 && index < ActiveGuns.Count - 1)
             {
-                Destroy(CurrentWeaponObject);
+                ActiveGuns[index].SetActive(false);
             }
+        }
 
-            CurrentWeaponObject = Instantiate(prefab, Vector3.zero, prefab.transform.rotation);
-            CurrentWeaponObject.transform.SetParent(GunPosition, false);
+        void SetWeapon(int index)
+        {
+            if (index >= 0 && index < ActiveGuns.Count)
+            {
+                ActiveGuns[index].SetActive(true);
+            }
         }
     }
 }

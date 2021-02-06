@@ -28,15 +28,16 @@ namespace General
 
         public GameObject GetObjectFromPool()
         {
-            if (Pool.Count != 0)
-            {
-                AddNewObjectToPool();
-                return GetLastObject();
-            }
-
             if (Pool.Count < ObjectCount / 2)
             {
-                AddNewObjectToPool();
+                for (int i = Pool.Count; i < ObjectCount; i++)
+                {
+                    AddNewObjectToPool();
+                }
+            }
+
+            if (Pool.Count != 0)
+            {
                 return GetLastObject();
             }
 
@@ -51,7 +52,7 @@ namespace General
             Pool.RemoveAt(lastIndex);
             return lastObject;
         }
-        
+
 
         private void AddNewObjectToPool()
         {
