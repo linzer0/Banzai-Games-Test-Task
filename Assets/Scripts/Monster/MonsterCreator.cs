@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using General;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -8,21 +9,25 @@ namespace Monster
     public class MonsterCreator : MonoBehaviour
     {
         public int MonsterAmount = 10;
-
         public float XOffset;
         public float ZOffset;
 
         [SerializeField] private List<GameObject> MonsterPrefabs;
         [SerializeField] private GameObject ChaseTarget;
+        [SerializeField] private ObjectPool ObjectPool;
 
         void Start()
         {
+            ObjectPool.PrefabList = MonsterPrefabs;
             CreateMonsters(MonsterAmount);
         }
 
-        void CreateMonster(GameObject prefab, Vector3 spawnPosition)
+        void CreateMonster(Vector3 spawnPosition)
         {
-            var monsterObject = Instantiate(prefab, spawnPosition, Quaternion.identity);
+            var monsterObject = ObjectPool.GetObjectFromPool();
+            monsterObject.transform.position = spawnPosition; 
+            monsterObject.SetActive(true);
+            
             var monsterComponentHolder = monsterObject.GetComponent<MonsterComponentHolder>();
 
             var healthController = monsterComponentHolder.HealthController;
@@ -38,9 +43,8 @@ namespace Monster
             for (int i = 0; i < amount; i++)
             {
                 var monsterPosition = GetPositionOutsideCameraView();
-                var monsterPrefab = MonsterPrefabs[Random.Range(0, MonsterPrefabs.Count)];
 
-                CreateMonster(monsterPrefab, monsterPosition);
+                CreateMonster(monsterPosition);
             }
         }
 
