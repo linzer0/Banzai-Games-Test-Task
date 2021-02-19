@@ -1,4 +1,4 @@
-﻿using Components;
+﻿using General;
 using UnityEngine;
 
 namespace Monster
@@ -21,6 +21,7 @@ namespace Monster
                 var targetPosition = Target.transform.position;
                 transform.position = Vector3.MoveTowards(transform.position, targetPosition,
                     DataComponent.Speed * Time.deltaTime);
+                
                 transform.LookAt(targetPosition);
             }
         }

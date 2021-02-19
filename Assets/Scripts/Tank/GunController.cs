@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Components;
 using General;
 using UnityEngine;
 
@@ -54,9 +53,9 @@ namespace Tank
             Destroy(bullet, BulletLifeTime);
         }
 
-        private void AddForceToBullet(Rigidbody rigidbody)
+        private void AddForceToBullet(Rigidbody bulletRigidbody)
         {
-            rigidbody.AddForce(LaunchPosition.forward * BulletSpeed, ForceMode.Force);
+            bulletRigidbody.AddForce(LaunchPosition.forward * BulletSpeed, ForceMode.Force);
         }
     }
 }

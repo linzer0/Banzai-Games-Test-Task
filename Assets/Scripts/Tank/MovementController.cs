@@ -1,4 +1,4 @@
-﻿using Components;
+﻿using General;
 using UnityEngine;
 
 namespace Tank

@@ -25,14 +25,13 @@ namespace Monster
         void CreateMonster(Vector3 spawnPosition)
         {
             var monsterObject = ObjectPool.GetObjectFromPool();
-            monsterObject.transform.position = spawnPosition; 
+            monsterObject.transform.position = spawnPosition;
             monsterObject.SetActive(true);
-            
+
             var monsterComponentHolder = monsterObject.GetComponent<MonsterComponentHolder>();
 
             var healthController = monsterComponentHolder.HealthController;
-            healthController.OnDeath += OnMonsterDestroy;
-            healthController.OnDeath += () => { healthController.OnDeath -= OnMonsterDestroy; };
+            healthController.OnDeath += () => OnMonsterDestroy(healthController);
 
             var moveToTarget = monsterComponentHolder.MoveToTarget;
             moveToTarget.Target = ChaseTarget;
@@ -48,9 +47,10 @@ namespace Monster
             }
         }
 
-        private void OnMonsterDestroy()
+        private void OnMonsterDestroy(HealthController healthController)
         {
             CreateMonsters();
+            healthController.OnDeath -= () => OnMonsterDestroy(healthController);
         }
 
         private Vector3 GetPositionOutsideCameraView()

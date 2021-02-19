@@ -17,7 +17,7 @@ namespace Tank
 
         private List<GameObject> ActiveGuns = new List<GameObject>();
 
-        void Start()
+        private void Start()
         {
             CreateAllGuns();
             SetWeapon(0);
@@ -39,10 +39,11 @@ namespace Tank
             }
         }
 
-        void Update()
+        private void Update()
         {
             if (Input.GetKeyDown(KeyCode.Q))
             {
+                CurrentWeaponIndex--;
                 SetPreviousWeapon();
             }
 
@@ -52,7 +53,7 @@ namespace Tank
             }
         }
 
-        void SetPreviousWeapon()
+        private void SetPreviousWeapon()
         {
             if (CurrentWeaponIndex - 1 >= 0)
             {
@@ -62,7 +63,7 @@ namespace Tank
             }
         }
 
-        void SetNextWeapon()
+        private void SetNextWeapon()
         {
             if (CurrentWeaponIndex + 1 < WeaponList.Count)
             {
@@ -72,7 +73,7 @@ namespace Tank
             }
         }
 
-        void UnSetWeapon(int index)
+        private void UnSetWeapon(int index)
         {
             if (index >= 0 && index < ActiveGuns.Count - 1)
             {
@@ -80,7 +81,7 @@ namespace Tank
             }
         }
 
-        void SetWeapon(int index)
+        private void SetWeapon(int index)
         {
             if (index >= 0 && index < ActiveGuns.Count)
             {
